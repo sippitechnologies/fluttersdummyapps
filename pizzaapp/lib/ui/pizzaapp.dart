@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pizzaapp/ui/pizzaImageview.dart';
+import 'package:pizzaapp/ui/orderbutton.dart';
 
 class PizzaApp extends StatelessWidget {
   @override
@@ -7,7 +7,7 @@ class PizzaApp extends StatelessWidget {
     return Container(
       alignment: Alignment.bottomCenter,
       color: Colors.amberAccent,
-      child: PizzaImageView(),
+      child: OrderButton(),
     );
   }
 }

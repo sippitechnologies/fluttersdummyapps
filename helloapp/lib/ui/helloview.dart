@@ -6,11 +6,11 @@ class HelloView extends StatefulWidget {
 }
 
 class _HelloViewState extends State<HelloView> {
-  String label = "Hello";
+  String label = "";
 
   void onLabelUpdate(String name) {
     setState(() {
-      label = "Hello ${name}";
+      label = "${getTimelyGreeting()} ${name}";
     });
   }
 
@@ -25,5 +25,17 @@ class _HelloViewState extends State<HelloView> {
         Text(label)
       ],
     );
+  }
+
+  String getTimelyGreeting() {
+    DateTime now = DateTime.now();
+    int hour = now.hour;
+    if (hour < 12) {
+      return "Good Morning";
+    } else if (hour < 18) {
+      return "Good Afternoon";
+    } else {
+      return "Good Night";
+    }
   }
 }

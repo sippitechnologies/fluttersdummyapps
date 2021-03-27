@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:pizzaapp/ui/orderbutton.dart';
+import 'package:pizzaapp/ui/pizzaappview.dart';
 
 class PizzaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.bottomCenter,
+      padding: EdgeInsets.all(50),
       color: Colors.amberAccent,
-      child: OrderButton(),
+      child: PizzaAppView(),
     );
   }
 }

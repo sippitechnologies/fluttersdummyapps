@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloapp/ui/helloview.dart';
+import 'package:helloapp/ui/helloviewwithtextcontroller.dart';
 
 class HelloApp extends StatelessWidget {
   @override
@@ -11,7 +11,7 @@ class HelloApp extends StatelessWidget {
           appBar: AppBar(
             title: Text('Hello App'),
           ),
-          body: HelloView(),
+          body: HelloViewWithTextControlled(),
         ));
   }
 }

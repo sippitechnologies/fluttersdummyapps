@@ -8,9 +8,9 @@ class HelloViewWithTextControlled extends StatefulWidget {
 class _HelloViewState extends State<HelloViewWithTextControlled> {
   String label = "Hello";
   TextEditingController textEditingController;
-  void onLabelUpdate(String name) {
+  void onLabelUpdate() {
     setState(() {
-      label = "Hello ${name}";
+      label = textEditingController.text;
     });
   }
 
@@ -21,6 +21,10 @@ class _HelloViewState extends State<HelloViewWithTextControlled> {
         TextField(
           textAlign: TextAlign.center,
           controller: textEditingController,
+        ),
+        RaisedButton(
+          onPressed: onLabelUpdate,
+          child: Text("Update Label"),
         ),
         Text(label)
       ],

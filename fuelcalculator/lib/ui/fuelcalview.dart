@@ -64,11 +64,10 @@ class _FullCalViewState extends State<FuelCalView> {
                 onChanged: (value) => updateCurrency(value),
                 value: selectedCurrency,
                 items: currencies
-                    .map<DropdownMenuItem<String>>(
-                        (String value) => DropdownMenuItem<String>(
-                              child: Text(value),
-                              value: value,
-                            ))
+                    .map((String value) => DropdownMenuItem<String>(
+                          child: Text(value),
+                          value: value,
+                        ))
                     .toList()),
             Row(
               children: [

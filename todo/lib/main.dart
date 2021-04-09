@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todo/models/todo.dart';
+import 'package:todo/util/dbhelper.dart';
 
 void main() {
   runApp(MyApp());
@@ -61,6 +63,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    List<dynamic> todos;
+    DbHelper dbHelper = DbHelper();
+    dbHelper
+        .intializeDb()
+        .then((value) => dbHelper.getTodos().then((value) => todos = value));
+    DateTime now = DateTime.now();
+    Todo todo = Todo("Banana", now.toString(), 3, "Banana is Good for Health");
+    int isInserted = 0;
+    dbHelper.insertTodo(todo).then((value) => isInserted = value);
+    print(todos);
+    print(isInserted);
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //

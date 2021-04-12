@@ -24,7 +24,7 @@ class TodoListState extends State<TodoList> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          Todo todo = Todo("", "", 3);
+          Todo todo = Todo("", "", 1);
           navigateToTodoDetail(todo);
         },
       ),
@@ -91,5 +91,8 @@ class TodoListState extends State<TodoList> {
   void navigateToTodoDetail(Todo todo) async {
     bool result = await Navigator.push(
         context, MaterialPageRoute(builder: (context) => TodoDetail(todo)));
+    if (result) {
+      getData();
+    }
   }
 }

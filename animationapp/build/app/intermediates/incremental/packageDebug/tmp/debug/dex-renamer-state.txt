@@ -1,0 +1,4 @@
+#Thu Apr 15 04:48:09 IST 2021
+base.0=D\:\\fluttercoursecode\\fluttersdummyapps\\animationapp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

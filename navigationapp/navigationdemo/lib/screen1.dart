@@ -10,12 +10,16 @@ class Screen1 extends StatelessWidget {
       body: Column(
         children: [
           RaisedButton(
-              onPressed: navigateToAnotherScreen,
+              onPressed: () {
+                navigateToAnotherScreen(context);
+              },
               child: Text("Navigate To Screen Two")),
         ],
       ),
     );
   }
 
-  void navigateToAnotherScreen() {}
+  void navigateToAnotherScreen(BuildContext context) {
+    Navigator.pushNamed(context, '/');
+  }
 }

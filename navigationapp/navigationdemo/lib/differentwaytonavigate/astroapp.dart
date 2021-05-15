@@ -17,11 +17,27 @@ class AstroHome extends StatefulWidget {
 }
 
 class _AstroHomeState extends State<AstroHome> {
+  var menuOptions = ["Delete", "Save", "Back to List"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Astro App"),
+        actions: <Widget>[
+          PopupMenuButton(
+            itemBuilder: (itemBuilder) {
+              return menuOptions
+                  .map((e) => PopupMenuItem(
+                        child: Text(e),
+                        value: e,
+                      ))
+                  .toList();
+            },
+            onSelected: (value) {
+              debugPrint(value);
+            },
+          )
+        ],
       ),
       body: Column(
         children: [
